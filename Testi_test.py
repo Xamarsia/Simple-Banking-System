@@ -35,4 +35,10 @@ if credit_principal == 'n':
     else:
         final = "You need {}{} to repay this credit!".format(year, month)
     print(final)
-
+elif credit_principal == "p":
+    monthly_payment = float(input('Enter monthly payment:'))  # A
+    periods = int(input("Enter count of periods:")) # n
+    credit_interest = float(input('Enter credit interest:'))  # i
+    i = (0.01 * credit_interest / 12)
+    P = int(monthly_payment /((i * ((1 + i) ** periods))/(((1 + i) ** periods) - 1)))
+    print('Your credit principal = ' + str(P) + '!')
